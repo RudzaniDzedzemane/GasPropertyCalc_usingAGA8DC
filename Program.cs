@@ -5,7 +5,7 @@
 
 double[] inputComposition = { 0.965, 0.003, 0.006, 0.018, 0.0045, 0, 0, 0, 0, 0, 0.0010, 0.0010, 0.0005, 0.0003, 0.0007, 0, 0, 0, 0, 0, 0 };
 
-GasPropertyCalc.GasProperty gas = new GasPropertyCalc.GasProperty(inputComposition);
+GasPropertyCalc.IGasProperty gas = new GasPropertyCalc.GasProperty(inputComposition);
 
 double P = 12000;
 
@@ -13,7 +13,7 @@ double T = 36.85;
 
 double Z = gas.getZ(T, P);
 
-double rho = gas.getrho(T, P);
+double rho = gas.getDensity(T, P);
 
 
 
@@ -22,3 +22,5 @@ Console.WriteLine("For pressurer " + P + " and temperature " + T);
 Console.WriteLine("Calculated value of Z is " + Z);
 
 Console.WriteLine("Calculated value of density is " + rho);
+
+Console.ReadKey();
